@@ -1,27 +1,27 @@
-.part1{
+.part1 {
     background-color: #2c3e50;
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    grid-template-rows: 100px;
-    padding-left: 520px;
+    display: flex; /* Changed to flex for better responsiveness */
+    align-items: center;
+    justify-content: center;
     color: white;
-    
+    padding: 20px;
+    text-align: center;
 }
 
-.part2{
-    background-color: rgb(213, 222, 213); 
+.part2 {
+    background-color: rgb(213, 222, 213);
     display: flex;
-    flex-direction: row;
-    padding: 1rem 0;
-    padding-left: 540px;
-    padding-top: 0px;
-    height: 20px;
+    justify-content: center;
+    padding: 1rem;
     margin-top: 12px;
 }
+
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    padding-left: 0;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 nav ul li {
@@ -33,36 +33,35 @@ nav ul li a {
     text-decoration: none;
 }
 
-.part3{
-    display: flex;
-    flex-direction: row;
-}
-.icon{
+.icon {
     height: 25px;
     width: 25px;
     border-radius: 20px;
 }
-.icons{
+
+.icons {
     cursor: pointer;
     border-radius: 20px;
     border-style: none;
     background-color: rgb(213, 222, 213);
 }
 
-.icons :hover{
+.icons:hover {
     opacity: 0.7;
 }
-.icons :active{
+
+.icons:active {
     opacity: 0.5;
 }
 
-.profile{
+.profile {
     height: 80px;
     width: 100%;
     border-radius: 150px;
     padding-top: 15px;
 }
 
+/* Contact Info */
 .contact-info {
     background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
     padding: 20px;
@@ -128,57 +127,72 @@ nav ul li a {
     animation-delay: 1.5s;
 }
 
-@media screen and (max-width: 1024px) {
-    /* Tablet view */
-    .container {
-        width: 90%;
+/* Media Queries for Responsiveness */
+
+/* Tablet devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .part1 {
+        grid-template-columns: 1fr; /* Stack content vertically */
+        padding-left: 0;
+        text-align: center;
     }
 
-    .icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    /* Mobile view */
-    nav ul {
+    .part2 {
         flex-direction: column;
+        padding-left: 0;
+        height: auto;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav links vertically */
         align-items: center;
     }
 
-    .icon {
-        width: 30px;
-        height: 30px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    /* Full-width container on small devices */
-    .container {
-        width: 95%;
+    .contact-info {
+        width: 90%; /* Make contact section fill more space */
     }
 }
 
-@media screen and (max-width: 480px) {
-    /* Small mobile devices */
+/* Mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .part1 {
+        grid-template-columns: 1fr; /* Stack profile and header */
+        padding-left: 0;
+    }
+
+    .header {
+        text-align: center;
+    }
+
     nav ul {
         flex-direction: column;
         align-items: center;
+        padding-left: 0;
     }
 
-    h1 {
-        font-size: 1.5rem;
+    .icons {
+        margin-bottom: 10px;
     }
 
     .icon {
-        width: 25px;
-        height: 25px;
+        height: 20px;
+        width: 20px;
+    }
+
+    .contact-info {
+        max-width: 100%; /* Full width for mobile */
+        padding: 15px;
+    }
+
+    .contact-info h2 {
+        font-size: 24px; /* Adjusted font size for smaller screens */
+    }
+
+    .contact-info p {
+        font-size: 16px;
+    }
+
+    .contact-info a {
+        font-size: 16px;
     }
 }
