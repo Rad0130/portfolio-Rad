@@ -40,6 +40,10 @@ nav ul li {
     border-radius: 20px;
     border-style: none;
     background-color: rgb(213, 222, 213);
+    display: flex; /* Ensure horizontal alignment */
+    justify-content: center; /* Center icons horizontally within the flex container */
+    align-items: center; /* Center icons vertically within the flex container */
+    flex-wrap: nowrap; /* Prevent wrapping to ensure all icons stay in one line */
 }
 
 .icons:hover {
