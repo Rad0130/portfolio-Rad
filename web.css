@@ -78,48 +78,76 @@ nav ul li a {
     color: rgb(232, 215, 194);
 }
 
-@media screen and (max-width: 1024px) {
-    .container {
-        width: 90%;
-    }
-
-    .icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
+.container {
+    width: 80%; /* Responsive width, based on the screen size */
+    margin: 0 auto;
 }
 
+.icon {
+    width: 10vw; /* Icon will scale based on the viewport width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+.icon {
+    width: 50px; /* Default size for larger screens */
+    height: auto;
+}
+
+/* Responsive Layout for Tablets */
 @media screen and (max-width: 768px) {
     nav ul {
-        flex-direction: column;
+        flex-direction: column; /* Stack items vertically */
         align-items: center;
     }
 
     .icon {
-        width: 30px;
-        height: 30px;
-    }
-
-    h1 {
-        font-size: 2rem;
+        width: 30px; /* Smaller icon for tablets */
+        height: auto;
     }
 
     .container {
-        width: 95%;
+        width: 90%; /* More space on smaller screens */
     }
 }
 
+/* Mobile Devices */
 @media screen and (max-width: 480px) {
-    h1 {
-        font-size: 1.5rem;
+    .icon {
+        width: 25px; /* Even smaller icons for phones */
+        height: auto;
     }
 
-    .icon {
-        width: 25px;
-        height: 25px;
+    .container {
+        width: 95%; /* Almost full width for small devices */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Smaller text for phones */
     }
 }
