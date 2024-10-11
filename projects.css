@@ -139,6 +139,18 @@ nav ul li a {
 }
 
 @media (max-width: 480px) {
+    .profile {
+        height: 50px;
+        width: 50px;
+    }
+
+    .part1 {
+        padding-left: 10px;
+    }
+
+    .heading {
+        font-size: 1.8em;
+    }
     .projects-section h2 {
         font-size: 24px;
     }
