@@ -40,6 +40,8 @@ nav ul li a {
 }
 
 .icons {
+    display: flex; /* Ensure icons are laid out in a row */
+    flex-direction: row; /* Explicitly set to row for horizontal alignment */
     cursor: pointer;
     border-radius: 20px;
     border-style: none;
@@ -185,6 +187,7 @@ nav ul li a {
 
     .icons {
         margin-bottom: 10px;
+        justify-content: center; /* Ensure horizontal alignment */
     }
 
     .goal-card {
