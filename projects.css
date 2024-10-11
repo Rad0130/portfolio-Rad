@@ -44,6 +44,8 @@ nav ul li a {
     border-radius: 20px;
     border-style: none;
     background-color: rgb(213, 222, 213);
+    display: flex; /* Added to ensure horizontal alignment */
+    justify-content: center; /* Center icons horizontally within the flex container */
 }
 
 .icons:hover {
