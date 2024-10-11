@@ -23,6 +23,8 @@ nav ul {
     justify-content: center;
     list-style: none;
     padding: 0;
+    margin: 0;
+    flex-direction: row;
 }
 
 nav ul li {
@@ -96,25 +98,22 @@ nav ul li a {
     }
 
     .myinfo, .ability {
-        padding-top: 10px;
         font-size: 1.1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .profile {
-        max-width: 150px; /* Even smaller on phones */
-    }
-
     nav ul {
-        flex-direction: column; /* Stack navigation items vertically */
+        display: flex;
+        flex-direction: row; /* Force horizontal alignment */
+        justify-content: center; /* Ensure they are centered */
     }
 
-    nav ul li {
-        margin-bottom: 10px; /* Add space between items */
+    .profile {
+        max-width: 150px; /* Smaller image on phones */
     }
 
     .myinfo, .ability {
-        font-size: 1rem; /* Smaller text for phones */
+        font-size: 1rem; /* Adjust text size for phones */
     }
 }
