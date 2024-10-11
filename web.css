@@ -1,23 +1,28 @@
-.part1{
-    background-color: #2c3e50;
-    padding-left: 600px;
-    color: white;
-    
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-.part2{
-    background-color: rgb(213, 222, 213); 
-    display: flex;
-    flex-direction: row;
-    padding: 1rem 0;
-    padding-left: 540px;
-    padding-top: 0px;
-    height: 20px;
+.part1 {
+    background-color: #2c3e50;
+    text-align: center; /* Center align the text */
+    padding: 1rem;
+    color: white;
 }
+
+.part2 {
+    background-color: rgb(213, 222, 213);
+    display: flex;
+    justify-content: center; /* Align navigation centrally */
+    padding: 1rem 0;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    padding: 0;
 }
 
 nav ul li {
@@ -29,125 +34,87 @@ nav ul li a {
     text-decoration: none;
 }
 
-.part3{
-    background-image: "portback.jpg";
+.part3 {
+    background-image: url('./icons/portback.jpg'); /* Fixing background image */
+    background-size: cover; /* Make the background image cover the area */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height: 500px;
-    margin-top: 20px;
+    grid-template-columns: 1fr 1fr; /* Adjusted grid for better responsiveness */
+    gap: 20px; /* Space between elements */
+    padding: 1rem;
 }
-.icon{
+
+.profile {
+    width: 100%;
+    max-width: 300px; /* Ensure it doesn't exceed a certain size */
+    height: auto;
+    border-radius: 50%;
+    margin: 0 auto; /* Center image on smaller screens */
+}
+
+.icon {
     height: 25px;
     width: 25px;
     border-radius: 20px;
 }
-.icons{
+
+.icons {
     cursor: pointer;
     border-radius: 20px;
     border-style: none;
     background-color: rgb(213, 222, 213);
 }
 
-.icons :hover{
+.icons:hover {
     opacity: 0.7;
 }
-.icons :active{
+
+.icons:active {
     opacity: 0.5;
 }
 
-.profile{
-    width: 500px;
-    height: 500px;
-    border-radius: 300px;
-}
-.header{
-    padding-left: 5px;
-}
-
-.myinfo{
-    padding-top: 40px;
-    font-size: large;
+.myinfo, .ability {
+    padding-top: 20px;
+    font-size: 1.2rem;
     font-style: italic;
     color: rgb(232, 215, 194);
-    
-}
-.ability{
-    padding-top: 200px;
-    font-size: larger;
-    font-style: italic;
-    color: rgb(232, 215, 194);
+    line-height: 1.5;
 }
 
-.container {
-    width: 80%; /* Responsive width, based on the screen size */
-    margin: 0 auto;
+.ability {
+    padding-top: 50px;
+    font-size: 1.5rem;
 }
 
-.icon {
-    width: 10vw; /* Icon will scale based on the viewport width */
-    height: auto; /* Maintain aspect ratio */
+@media (max-width: 768px) {
+    .part3 {
+        grid-template-columns: 1fr; /* Stacks the columns for smaller screens */
+        text-align: center; /* Center text on small screens */
+    }
+
+    .profile {
+        max-width: 200px; /* Smaller profile image for smaller screens */
+    }
+
+    .myinfo, .ability {
+        padding-top: 10px;
+        font-size: 1.1rem;
+    }
 }
 
+@media (max-width: 480px) {
+    .profile {
+        max-width: 150px; /* Even smaller on phones */
+    }
 
-/* Base Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-around;
-    list-style-type: none;
-    padding: 0;
-    flex-wrap: wrap; /* Allows wrapping on small screens */
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-.icon {
-    width: 50px; /* Default size for larger screens */
-    height: auto;
-}
-
-/* Responsive Layout for Tablets */
-@media screen and (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center;
+        flex-direction: column; /* Stack navigation items vertically */
     }
 
-    .icon {
-        width: 30px; /* Smaller icon for tablets */
-        height: auto;
+    nav ul li {
+        margin-bottom: 10px; /* Add space between items */
     }
 
-    .container {
-        width: 90%; /* More space on smaller screens */
-    }
-}
-
-/* Mobile Devices */
-@media screen and (max-width: 480px) {
-    .icon {
-        width: 25px; /* Even smaller icons for phones */
-        height: auto;
-    }
-
-    .container {
-        width: 95%; /* Almost full width for small devices */
-    }
-
-    h1 {
-        font-size: 1.5rem; /* Smaller text for phones */
+    .myinfo, .ability {
+        font-size: 1rem; /* Smaller text for phones */
     }
 }
