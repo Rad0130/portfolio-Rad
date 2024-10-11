@@ -1,27 +1,27 @@
-.part1{
+.part1 {
     background-color: #2c3e50;
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    grid-template-rows: 100px;
-    padding-left: 520px;
+    display: flex; /* Changed to flex for better responsiveness */
+    align-items: center;
+    justify-content: center;
     color: white;
-    
+    padding: 20px;
+    text-align: center;
 }
 
-.part2{
-    background-color: rgb(213, 222, 213); 
+.part2 {
+    background-color: rgb(213, 222, 213);
     display: flex;
-    flex-direction: row;
-    padding: 1rem 0;
-    padding-left: 540px;
-    padding-top: 0px;
-    height: 20px;
+    justify-content: center;
+    padding: 1rem;
     margin-top: 12px;
 }
+
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    flex-wrap: wrap;
+    padding: 0;
 }
 
 nav ul li {
@@ -33,41 +33,36 @@ nav ul li a {
     text-decoration: none;
 }
 
-.part3{
-    display: flex;
-    flex-direction: row;
-}
-.icon{
+.icon {
     height: 25px;
     width: 25px;
     border-radius: 20px;
 }
-.icons{
+
+.icons {
     cursor: pointer;
     border-radius: 20px;
     border-style: none;
     background-color: rgb(213, 222, 213);
 }
 
-.icons :hover{
+.icons:hover {
     opacity: 0.7;
 }
-.icons :active{
+
+.icons:active {
     opacity: 0.5;
 }
 
-.profile{
+.profile {
     height: 80px;
     width: 100%;
     border-radius: 150px;
     padding-top: 15px;
 }
-.header{
-    padding-left: 5px;
-}
 
- /* Projects section */
- .projects-section {
+/* Projects section */
+.projects-section {
     margin-top: 50px;
     text-align: center;
     color: white;
@@ -82,15 +77,14 @@ nav ul li a {
 .project-card {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    margin: 20px;
+    margin: 20px auto;
     border-radius: 10px;
     transition: transform 0.3s ease;
-    display: inline-block;
-    width: 250px;
+    width: 90%; /* Make cards responsive */
+    max-width: 300px;
     color: rgb(232, 215, 194);
 }
 
-/* Hover animation for project cards */
 .project-card:hover {
     transform: translateY(-10px);
     transition: transform 0.3s ease-in-out;
@@ -112,57 +106,39 @@ nav ul li a {
     background-color: #555;
 }
 
-@media screen and (max-width: 1024px) {
-    /* Tablet view */
-    .container {
-        width: 90%;
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .part1 {
+        grid-template-columns: 1fr;
+        padding-left: 0;
     }
-
-    .icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    /* Mobile view */
-    nav ul {
+    
+    .part2 {
         flex-direction: column;
         align-items: center;
     }
 
-    .icon {
-        width: 30px;
-        height: 30px;
+    nav ul {
+        flex-direction: column;
+        padding: 0;
     }
 
-    h1 {
-        font-size: 2rem;
-    }
-
-    /* Full-width container on small devices */
-    .container {
-        width: 95%;
+    .icons {
+        margin-bottom: 10px;
     }
 }
 
-@media screen and (max-width: 480px) {
-    /* Small mobile devices */
-    nav ul {
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 480px) {
+    .projects-section h2 {
+        font-size: 24px;
     }
 
-    h1 {
-        font-size: 1.5rem;
+    .project-card {
+        width: 100%;
+        max-width: 250px;
     }
 
-    .icon {
-        width: 25px;
-        height: 25px;
+    .github-link {
+        font-size: 16px;
     }
 }
