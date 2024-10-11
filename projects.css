@@ -113,18 +113,21 @@ nav ul li a {
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
     .part1 {
-        grid-template-columns: 1fr;
-        padding-left: 0;
-    }
-    
-    .part2 {
         flex-direction: column;
-        align-items: center;
+        padding: 10px;
+    }
+
+    .profile {
+        height: 60px;
+        width: 60px;
     }
 
     nav ul {
-        flex-direction: column;
-        padding: 0;
+        flex-direction: row; /* Keep nav icons horizontal */
+    }
+
+    nav ul li {
+        margin: 0 8px;
     }
 
     .icons {
