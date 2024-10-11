@@ -145,20 +145,21 @@ nav ul li a {
 /* Tablet devices (max-width: 768px) */
 @media (max-width: 768px) {
     .part1 {
-        grid-template-columns: 1fr; /* Stack content vertically */
-        padding-left: 0;
-        text-align: center;
+        flex-direction: column;
+        padding: 10px;
     }
 
-    .part2 {
-        flex-direction: column;
-        padding-left: 0;
-        height: auto;
+    .profile {
+        height: 60px;
+        width: 60px;
     }
 
     nav ul {
-        flex-direction: column; /* Stack nav links vertically */
-        align-items: center;
+        flex-direction: row; /* Keep nav icons horizontal */
+    }
+
+    nav ul li {
+        margin: 0 8px;
     }
 
     .goal-card {
@@ -170,24 +171,23 @@ nav ul li a {
 
 /* Mobile devices (max-width: 480px) */
 @media (max-width: 480px) {
-    .part1 {
-        grid-template-columns: 1fr; /* Stack the header and profile */
-        padding-left: 0;
+    .profile {
+        height: 50px;
+        width: 50px;
     }
 
-    .header {
-        text-align: center;
+    .part1 {
+        padding-left: 10px;
+    }
+
+    .heading {
+        font-size: 1.8em;
     }
 
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        padding-left: 0;
-    }
-
-    .icons {
-        margin-bottom: 10px;
-        justify-content: center; /* Ensure horizontal alignment */
+        display: flex;
+        flex-direction: row; /* Force horizontal alignment */
+        justify-content: center; /* Ensure they are centered */
     }
 
     .goal-card {
